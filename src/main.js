@@ -58,7 +58,7 @@ function Parent() {
             <h2>
               <GiBabyFace />
               {' '}
-              Health data
+              E Vuze
             </h2>
             <nav>
               <Link to="/"><AiOutlineLogout /></Link>
