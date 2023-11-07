@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { FaTemperatureLow, FaHeartbeat } from 'react-icons/fa';
+import { FaTemperatureLow, FaHeartbeat, FaFileMedicalAlt } from 'react-icons/fa';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { WiHumidity } from 'react-icons/wi';
 import { Link } from 'react-router-dom';
-import { GiBabyFace } from 'react-icons/gi';
 import { firebaseApp } from './firebaseData/database';
 import Chart from './chart/chart';
 
@@ -56,7 +55,7 @@ function Parent() {
         <section className="home_page">
           <header>
             <h2>
-              <GiBabyFace />
+              <FaFileMedicalAlt color='green'/>
               {' '}
               E-Vuze
             </h2>
