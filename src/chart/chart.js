@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar,
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip
 } from 'recharts';
 
 const Chart = (props) => {

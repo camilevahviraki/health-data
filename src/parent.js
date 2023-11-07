@@ -1,6 +1,6 @@
 import './App.css';
 import { firebaseApp} from './firebaseData/database'
-import { getDatabase,ref, onValue, set} from 'firebase/database'
+import { getDatabase,ref, onValue} from 'firebase/database'
 import { useEffect, useState } from 'react';
 import { FaTemperatureLow, FaHeartbeat, FaBalanceScaleLeft } from 'react-icons/fa';
 import { AiOutlineLogout } from 'react-icons/ai';

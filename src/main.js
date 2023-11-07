@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { firebaseApp } from './firebaseData/database'
-import { getDatabase, ref, onValue, set } from 'firebase/database'
-import { FaTemperatureLow, FaHeartbeat, FaBalanceScaleLeft } from 'react-icons/fa';
+import { getDatabase, ref, onValue } from 'firebase/database'
+import { FaTemperatureLow, FaHeartbeat} from 'react-icons/fa';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { WiHumidity } from 'react-icons/wi';
 import { Link } from 'react-router-dom';
@@ -13,11 +13,6 @@ import Chart from './chart/chart';
 function Parent() {
   const [health, sethealth] = useState([]);
   const [data, setData] = useState({});
-  const [newRange, setNewRange] = useState({})
-  const [showAlHeart, setShowAlarmHeart] = useState(false);
-  const [showAlTemp, setShowAlarmTemp] = useState(false);
-  const [alarmTemp, setAlarmTemp] = useState('')
-  const [alarmHeart, setAlarmHeart] = useState('')
   const steps = ['Current Data', 'Charts'];
   const [step, setStep] = useState(1);
   const containerMainRef = useRef(null);
