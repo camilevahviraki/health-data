@@ -55,7 +55,7 @@ function Parent() {
         <section className="home_page">
           <header>
             <h2>
-              <FaFileMedicalAlt color='green'/>
+              <FaFileMedicalAlt color="green" />
               {' '}
               E-Vuze
             </h2>
