@@ -8,8 +8,6 @@ function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [name, setName] = useState('');
-  const [pass, setPass] = useState('');
   // User Login info
   const database = [
     {
@@ -65,10 +63,10 @@ function Login() {
       </div>
       <h1>Connect</h1>
           <label>Username </label>
-          <input type="text" name="uname" required onChange={(e)=> setName(e.target.value)}/>
+          <input type="text" name="uname" required />
           {renderErrorMessage("uname")}
           <label>Key</label>
-          <input type="password" name="pass" required onChange={(e)=> setPass(e.target.value)}/>
+          <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         <div className="button-container">
           <input type="submit" />
