@@ -131,6 +131,10 @@ function Parent() {
                 </div>
               </div>
             </div>
+
+            <div className="proverbe">
+              <p>Good health is not something we can buy. However it can be an extremely valuable savings account</p>
+            </div>
           </section>
           <div className="entity-list-wrapper" style={{ width: '80%', paddingBottom: '40px', marginTop: '44px' }}>
             {
