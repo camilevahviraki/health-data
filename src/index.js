@@ -11,12 +11,12 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <Routes>
-    <Route path="/" element={<Login />} />
-    <Route path="/parent" element={<Parent />} />
-    <Route path="/doctor" element={<Docteur />} />
-  </Routes>
-</BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/parent" element={<Parent />} />
+      <Route path="/doctor" element={<Docteur />} />
+    </Routes>
+  </BrowserRouter>,
 );
 
 reportWebVitals();

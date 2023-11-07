@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { firebaseApp } from './firebaseData/database'
-import { getDatabase, ref, onValue } from 'firebase/database'
-import { FaTemperatureLow, FaHeartbeat} from 'react-icons/fa';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { FaTemperatureLow, FaHeartbeat } from 'react-icons/fa';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { WiHumidity } from 'react-icons/wi';
 import { Link } from 'react-router-dom';
 import { GiBabyFace } from 'react-icons/gi';
+import { firebaseApp } from './firebaseData/database';
 import Chart from './chart/chart';
-
 
 function Parent() {
   const [health, sethealth] = useState([]);
@@ -19,18 +18,17 @@ function Parent() {
   const [scrollTo, setScrollTo] = useState(1);
   const [containerWidth, setContainerWidth] = useState(null);
 
-  const App = firebaseApp
-  const db = getDatabase(App)
+  const App = firebaseApp;
+  const db = getDatabase(App);
 
   useEffect(() => {
-    onValue(ref(db), snapshot => {
+    onValue(ref(db), (snapshot) => {
       const dat = snapshot.val();
       if (dat !== null) {
         sethealth(dat.UsersData.WcTxhOkt0lYeRZz8fAltHneTQ4d2.currentData);
         setData(dat.UsersData.WcTxhOkt0lYeRZz8fAltHneTQ4d2);
       }
-    })
-
+    });
   }, []);
 
   useEffect(() => {
@@ -53,18 +51,22 @@ function Parent() {
   // console.log(Object.entries(data.chartData));
 
   return (
-    <div className="App" >
+    <div className="App">
       <main>
         <section className="home_page">
           <header>
-            <h2><GiBabyFace />{" "}Health data</h2>
+            <h2>
+              <GiBabyFace />
+              {' '}
+              Health data
+            </h2>
             <nav>
-              <Link to='/'><AiOutlineLogout /></Link>
+              <Link to="/"><AiOutlineLogout /></Link>
             </nav>
           </header>
           {/* <div className="page_description"> */}
-            <div className="item-progress-bar-container">
-              {
+          <div className="item-progress-bar-container">
+            {
                 steps.map((stepUp, key) => (
                   <div
                     key={stepUp}
@@ -83,10 +85,10 @@ function Parent() {
                   </div>
                 ))
               }
-            </div>
+          </div>
           {/* </div> */}
         </section>
-        <div className='main_contrainer-page' ref={containerMainRef}>
+        <div className="main_contrainer-page" ref={containerMainRef}>
           <section className="datas_container entity-list-wrapper">
             <h2>My Datas</h2>
             <div>
@@ -98,7 +100,10 @@ function Parent() {
                       <FaTemperatureLow />
                     </div>
                     <div>
-                      <p>{health.temperature}°C</p>
+                      <p>
+                        {health.temperature}
+                        °C
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -130,30 +135,48 @@ function Parent() {
           </section>
           <div className="entity-list-wrapper" style={{ width: '80%', paddingBottom: '40px', marginTop: '44px' }}>
             {
-              data.chartData && step === 2 ? <>
-                <Chart
-                  data={Object.entries(data.chartData)}
-                  field={2}
-                  fieldName={<div><FaTemperatureLow /> Temperature</div>}
-                />
-                <Chart
-                  data={Object.entries(data.chartData)}
-                  field={0}
-                  fieldName={<div><FaHeartbeat /> Heart Rate</div>}
-                />
-                <Chart
-                  data={Object.entries(data.chartData)}
-                  field={1}
-                  fieldName={<div><WiHumidity /> Blood Oxygen</div>}
-                />
-              </>
-                :
-                <></>
+              data.chartData && step === 2 ? (
+                <>
+                  <Chart
+                    data={Object.entries(data.chartData)}
+                    field={2}
+                    fieldName={(
+                      <div>
+                        <FaTemperatureLow />
+                        {' '}
+                        Temperature
+                      </div>
+)}
+                  />
+                  <Chart
+                    data={Object.entries(data.chartData)}
+                    field={0}
+                    fieldName={(
+                      <div>
+                        <FaHeartbeat />
+                        {' '}
+                        Heart Rate
+                      </div>
+)}
+                  />
+                  <Chart
+                    data={Object.entries(data.chartData)}
+                    field={1}
+                    fieldName={(
+                      <div>
+                        <WiHumidity />
+                        {' '}
+                        Blood Oxygen
+                      </div>
+)}
+                  />
+                </>
+              )
+                : <></>
             }
 
           </div>
         </div>
-
 
       </main>
     </div>
