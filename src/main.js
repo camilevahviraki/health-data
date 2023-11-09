@@ -57,7 +57,7 @@ function Parent() {
             <h2>
               <FaFileMedicalAlt color="green" />
               {' '}
-              E-Vuze
+              e-Ivuze
             </h2>
             <nav>
               <Link to="/"><AiOutlineLogout /></Link>
@@ -89,7 +89,7 @@ function Parent() {
         </section>
         <div className="main_contrainer-page" ref={containerMainRef}>
           <section className="datas_container entity-list-wrapper">
-            <h2>My Datas</h2>
+            <h2>Your Health At Your Screen</h2>
             <div>
               <div className="datas">
                 <div>
@@ -133,7 +133,7 @@ function Parent() {
             </div>
 
             <div className="proverbe">
-              <p>Good health is not something we can buy. However it can be an extremely valuable savings account</p>
+              <p>Good health is not something we can buy. However it can be an extremely valuable Investment</p>
             </div>
           </section>
           <div className="entity-list-wrapper" style={{ width: '80%', paddingBottom: '40px', marginTop: '44px' }}>
